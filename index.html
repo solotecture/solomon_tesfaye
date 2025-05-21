@@ -3,56 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solomon Tesfaye – Portfolio</title>
+  <title>Solomon Tesfaye – BIM Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans scroll-smooth">
 
-  <!-- Hero Section with Cards -->
+  <!-- Landing Grid -->
   <section class="min-h-screen flex items-center justify-center p-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
-      
       <a href="#about" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">About Me</h2>
-        <p class="text-sm text-gray-600">Learn about my background and goals.</p>
+        <p class="text-sm text-gray-600">Learn more about who I am.</p>
       </a>
-
       <a href="#projects" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">Projects</h2>
-        <p class="text-sm text-gray-600">Explore my BIM and architecture work.</p>
+        <p class="text-sm text-gray-600">Explore my work and reports.</p>
       </a>
-
       <a href="#cv" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">CV</h2>
-        <p class="text-sm text-gray-600">Download my resume and experience summary.</p>
+        <p class="text-sm text-gray-600">View and download my resume.</p>
       </a>
-
       <a href="#contact" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">Contact</h2>
-        <p class="text-sm text-gray-600">Reach me via email or LinkedIn.</p>
+        <p class="text-sm text-gray-600">Get in touch with me.</p>
       </a>
-
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About Me Section -->
   <section id="about" class="py-20 bg-white px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <p>I’m Solomon Tesfaye, an aspiring BIM professional with a distinction-grade MSc and a background in architecture. I’m focused on digital coordination, information management, and lifelong learning.</p>
+      <p>I’m Solomon Tesfaye, an emerging BIM professional with a distinction-grade MSc and a background in architecture and engineering. I specialize in BIM coordination, information management, and digital workflows using tools like Revit, Navisworks, Dynamo, and IES-VE.</p>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="py-20 bg-gray-100 px-6">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4">Projects</h2>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>Surf Central HQ – 3D–8D BIM audit, clash detection, Power BI validation</li>
-        <li>Health Facility – ISO 19650 client-side data management workflows</li>
-        <li>Retrofit Project – Energy modelling (IES-VE), 60% heating load reduction</li>
-        <li>Python Tool – Automated ranking of design options (solution time reduced from days to minutes)</li>
-      </ul>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <a href="surf-life-bim-audit.pdf" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-1">1. Surf Life BIM Audit</h3>
+          <p class="text-sm text-gray-600">IFC clash detection and 8D validation</p>
+        </a>
+
+        <a href="lean-design-firm.pdf" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-1">2. Lean Application to a Design Firm</h3>
+          <p class="text-sm text-gray-600">Process mapping and performance analysis</p>
+        </a>
+
+        <a href="integrated-bim-collaboration.pdf" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-1">3. Integrated BIM Projects</h3>
+          <p class="text-sm text-gray-600">Digital collaboration workflows</p>
+        </a>
+
+        <a href="standardised-digital-info.pdf" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-1">4. Strategic Advisory on Digital Info Management</h3>
+          <p class="text-sm text-gray-600">Standardization and ISO 19650 guidance</p>
+        </a>
+
+        <a href="retrofit-victorian-house.pdf" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold mb-1">5. Energy Retrofit Design</h3>
+          <p class="text-sm text-gray-600">IES-VE simulation for Victorian house retrofit</p>
+        </a>
+
+      </div>
     </div>
   </section>
 
@@ -60,7 +77,7 @@
   <section id="cv" class="py-20 bg-white px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-4">CV</h2>
-      <p><a href="cv_2025_updated.pdf" class="text-blue-600 underline">Click here to download my CV</a></p>
+      <p>You can <a href="cv_2025_updated.pdf" class="text-blue-600 underline" target="_blank">download my full CV here</a>.</p>
     </div>
   </section>
 
@@ -69,7 +86,7 @@
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-4">Contact</h2>
       <p>Email: <a href="mailto:solotecture@gmail.com" class="text-blue-600 underline">solotecture@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/solotecture" target="_blank" class="text-blue-600 underline">linkedin.com/in/solotecture</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/solotecture" class="text-blue-600 underline" target="_blank">linkedin.com/in/solotecture</a></p>
     </div>
   </section>
 
