@@ -11,22 +11,35 @@
   <!-- Home Grid -->
   <section class="min-h-screen flex items-center justify-center p-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+
       <a href="#about" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">About Me</h2>
         <p class="text-sm text-gray-600">Learn more about who I am.</p>
       </a>
+
       <a href="#projects" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">Projects</h2>
         <p class="text-sm text-gray-600">Explore my work and reports.</p>
       </a>
+
+      <a href="#certifications" class="rounded-xl overflow-hidden shadow hover:shadow-xl transition">
+        <img src="certification-cover.jpg" alt="Certifications" class="w-full h-40 object-cover">
+        <div class="bg-white p-4">
+          <h2 class="text-xl font-bold mb-2">Certifications</h2>
+          <p class="text-sm text-gray-600">Proof of training and skills</p>
+        </div>
+      </a>
+
       <a href="#cv" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">CV</h2>
         <p class="text-sm text-gray-600">View and download my resume.</p>
       </a>
+
       <a href="#contact" class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
         <h2 class="text-xl font-bold mb-2">Contact</h2>
         <p class="text-sm text-gray-600">Get in touch with me.</p>
       </a>
+
     </div>
   </section>
 
@@ -38,49 +51,44 @@
     </div>
   </section>
 
-  <!-- Projects Section with Image Boxes -->
+  <!-- Projects Section -->
   <section id="projects" class="py-20 bg-gray-100 px-6">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold mb-6">Projects</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Add your project cards here if needed -->
+        <p class="text-gray-600">Project section under development...</p>
+      </div>
+    </div>
+  </section>
 
-        <a href="surf-life-bim-audit.pdf" target="_blank" class="block rounded-xl shadow hover:shadow-xl transition overflow-hidden">
-          <img src="surf-life-bim-audit.jpg" alt="Surf Life BIM Audit" class="w-full h-56 object-cover">
+  <!-- Certifications Section -->
+  <section id="certifications" class="py-20 bg-white px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Certifications</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <a href="bim-certificates.pdf" target="_blank" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+          <img src="certification-cover.jpg" alt="BIM Certifications" class="w-full h-40 object-cover">
           <div class="bg-white p-4">
-            <h3 class="text-lg font-semibold">Surf Life BIM Audit</h3>
-            <p class="text-sm text-gray-600">IFC clash detection and 3D to 8D validation</p>
+            <h3 class="text-lg font-semibold mb-1">BIM Certifications</h3>
+            <p class="text-sm text-gray-600">Includes ISO 19650, coordination, and CDE principles.</p>
           </div>
         </a>
 
-        <a href="lean-design-firm.pdf" target="_blank" class="block rounded-xl shadow hover:shadow-xl transition overflow-hidden">
-          <img src="lean-design-firm.jpg" alt="Lean Design Firm" class="w-full h-56 object-cover">
+        <a href="software-certificates.pdf" target="_blank" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+          <img src="certification-cover.jpg" alt="Software Certifications" class="w-full h-40 object-cover">
           <div class="bg-white p-4">
-            <h3 class="text-lg font-semibold">Lean Application to a Design Firm</h3>
-            <p class="text-sm text-gray-600">Process mapping and performance improvement</p>
+            <h3 class="text-lg font-semibold mb-1">Software Tools</h3>
+            <p class="text-sm text-gray-600">Revit, AutoCAD, Navisworks, Solibri, and more.</p>
           </div>
         </a>
 
-        <a href="integrated-bim-collaboration.pdf" target="_blank" class="block rounded-xl shadow hover:shadow-xl transition overflow-hidden">
-          <img src="integrated-bim-collaboration.jpg" alt="Integrated BIM Collaboration" class="w-full h-56 object-cover">
+        <a href="sustainability-certificates.pdf" target="_blank" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+          <img src="certification-cover.jpg" alt="Sustainability Certifications" class="w-full h-40 object-cover">
           <div class="bg-white p-4">
-            <h3 class="text-lg font-semibold">Integrated BIM Projects</h3>
-            <p class="text-sm text-gray-600">The role of digital collaboration in coordination</p>
-          </div>
-        </a>
-
-        <a href="standardised-digital-info.pdf" target="_blank" class="block rounded-xl shadow hover:shadow-xl transition overflow-hidden">
-          <img src="standardised-digital-info.jpg" alt="Strategic Digital Info Management" class="w-full h-56 object-cover">
-          <div class="bg-white p-4">
-            <h3 class="text-lg font-semibold">Strategic Advisory on Digital Info Management</h3>
-            <p class="text-sm text-gray-600">Standardisation and ISO 19650-compliant workflows</p>
-          </div>
-        </a>
-
-        <a href="retrofit-victorian-house.pdf" target="_blank" class="block rounded-xl shadow hover:shadow-xl transition overflow-hidden">
-          <img src="retrofit-victorian-house.jpg" alt="Energy Retrofit" class="w-full h-56 object-cover">
-          <div class="bg-white p-4">
-            <h3 class="text-lg font-semibold">Energy Retrofit Design (Victorian House)</h3>
-            <p class="text-sm text-gray-600">IES-VE based energy simulation for decarbonisation</p>
+            <h3 class="text-lg font-semibold mb-1">Sustainability & Energy</h3>
+            <p class="text-sm text-gray-600">IES-VE, retrofit design, low-carbon strategies.</p>
           </div>
         </a>
 
@@ -89,7 +97,7 @@
   </section>
 
   <!-- CV Section -->
-  <section id="cv" class="py-20 bg-white px-6">
+  <section id="cv" class="py-20 bg-gray-100 px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-4">CV</h2>
       <p>You can <a href="Tesfaye_CV.pdf" class="text-blue-600 underline" target="_blank">download my full CV here</a>.</p>
@@ -97,7 +105,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-100 px-6">
+  <section id="contact" class="py-20 bg-white px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-4">Contact</h2>
       <p>Email: <a href="mailto:solomontesfaye.eng@gmail.com" class="text-blue-600 underline">solomontesfaye.eng@gmail.com</a></p>
