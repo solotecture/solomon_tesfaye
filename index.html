@@ -328,6 +328,92 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Carousel Styles */
+        .carousel-wrapper {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .carousel-card {
+            min-width: 280px;
+            scroll-snap-align: start;
+            background: var(--netflix-dark-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .carousel-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .carousel-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .carousel-info {
+            padding: 1rem;
+        }
+        
+        .carousel-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: var(--netflix-white);
+        }
+        
+        .carousel-info p {
+            font-size: 0.9rem;
+            color: var(--netflix-light-gray);
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--netflix-white);
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        
+        .arrow:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .arrow-left { left: -2rem; }
+        .arrow-right { right: -2rem; }
+        
         /* Contact Section */
         .contact-info {
             background-color: var(--netflix-dark-gray);
@@ -389,6 +475,10 @@
             
             .home-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .arrow-left, .arrow-right { 
+                display: none; 
             }
         }
         
@@ -495,7 +585,7 @@
                 </div>
             </div>
 
-            <h2 class="section-title">More Projects</h2>
+            <h2 class="section-title">Project Portfolio</h2>
             <div class="projects-grid">
                 <a href="lean-design-firm.pdf" target="_blank" class="project-card">
                     <div class="project-image">
@@ -536,6 +626,50 @@
                         <p>IES-VE simulation analysis for sustainable decarbonisation strategies.</p>
                     </div>
                 </a>
+            </div>
+
+            <!-- Carousel Section -->
+            <h3 class="section-title" style="font-size: 2rem; margin-top: 3rem;">Additional Projects</h3>
+            <div class="carousel-wrapper">
+                <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
+                <div class="carousel-container" id="carousel">
+                    <div class="carousel-card">
+                        <div class="carousel-img">BIM Process Optimization</div>
+                        <div class="carousel-info">
+                            <h3>BIM Process Optimization</h3>
+                            <p>Streamlining digital workflows for enhanced project delivery</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="carousel-img">Clash Detection Studies</div>
+                        <div class="carousel-info">
+                            <h3>Clash Detection Studies</h3>
+                            <p>Advanced coordination analysis and resolution strategies</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="carousel-img">Digital Twin Development</div>
+                        <div class="carousel-info">
+                            <h3>Digital Twin Development</h3>
+                            <p>Creating intelligent building models for lifecycle management</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="carousel-img">Sustainability Assessment</div>
+                        <div class="carousel-info">
+                            <h3>Sustainability Assessment</h3>
+                            <p>Environmental impact analysis and green building certification</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="carousel-img">Heritage Building BIM</div>
+                        <div class="carousel-info">
+                            <h3>Heritage Building BIM</h3>
+                            <p>Digital documentation and preservation of historic structures</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
             </div>
         </div>
     </section>
@@ -594,58 +728,4 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:solomontesfaye.eng@gmail.com">solomontesfaye.eng@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/solotecture" target="_blank">linkedin.com/in/solotecture</a></p>
-                <p style="margin-top: 1.5rem;">I'm always interested in discussing new opportunities in BIM coordination, digital construction workflows, and sustainable design projects. Feel free to reach out to explore how we can collaborate.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Solomon Tesfaye - BIM & Architecture Professional</p>
-            <p style="margin-top: 0.5rem; color: var(--netflix-light-gray);">
-                Specializing in ISO 19650, IFC coordination, and sustainable design solutions
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Navigation background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card, .home-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    </script>
-</body>
-</html>
+                <p><strong>Email:</strong> <a href="mailto:solomontesfaye.eng@gmail.com">solomon
