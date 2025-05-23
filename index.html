@@ -83,7 +83,6 @@
             min-height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(20,20,20,0.9) 100%), 
             url('futuristic_city_with_watermark.jpg') center/cover no-repeat;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -235,6 +234,13 @@
         .featured-project-image {
             height: 400px;
             overflow: hidden;
+            background: linear-gradient(135deg, #333333, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b3b3b3;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
         
         .featured-project-image img {
@@ -601,7 +607,7 @@
             <!-- Featured Project -->
             <div class="featured-project">
                 <div class="featured-project-image">
-                    <img src="surf-life-bim-audit.jpg" alt="Surf Life BIM Audit">
+                    Surf Life BIM Audit
                 </div>
                 <div class="featured-project-content">
                     <h3>Surf Life BIM Audit</h3>
@@ -611,7 +617,7 @@
                         <span class="project-tag">Clash Detection</span>
                         <span class="project-tag">8D BIM</span>
                     </div>
-                    <a href="surf-life-bim-audit.pdf" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">View Full Report</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">View Full Report</a>
                 </div>
             </div>
 
@@ -619,7 +625,7 @@
             <div class="carousel-wrapper">
                 <button class="arrow arrow-left" onclick="scrollPortfolioCarousel(-1)">&#10094;</button>
                 <div class="carousel-container" id="portfolio-carousel">
-                    <a href="lean-design-firm.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">Lean Design Firm</div>
                         <div class="carousel-info">
                             <h3>Lean Application to a Design Firm</h3>
@@ -627,7 +633,7 @@
                         </div>
                     </a>
 
-                    <a href="integrated-bim-collaboration.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">Integrated BIM Projects</div>
                         <div class="carousel-info">
                             <h3>Integrated BIM Projects</h3>
@@ -635,7 +641,7 @@
                         </div>
                     </a>
 
-                    <a href="standardised-digital-info.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">Strategic Info Management</div>
                         <div class="carousel-info">
                             <h3>Strategic Advisory on Digital Info Management</h3>
@@ -643,7 +649,7 @@
                         </div>
                     </a>
 
-                    <a href="retrofit-victorian-house.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">Retrofit Victorian House</div>
                         <div class="carousel-info">
                             <h3>Energy Retrofit Design (Victorian House)</h3>
@@ -707,7 +713,7 @@
             <div class="carousel-wrapper">
                 <button class="arrow arrow-left" onclick="scrollCertificationsCarousel(-1)">&#10094;</button>
                 <div class="carousel-container" id="certifications-carousel">
-                    <a href="bim-certificates.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">BIM Certifications</div>
                         <div class="carousel-info">
                             <h3>BIM Certifications</h3>
@@ -715,7 +721,7 @@
                         </div>
                     </a>
 
-                    <a href="software-certificates.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">Software Tools</div>
                         <div class="carousel-info">
                             <h3>Software Tools</h3>
@@ -723,7 +729,7 @@
                         </div>
                     </a>
 
-                    <a href="sustainability-certificates.pdf" target="_blank" class="carousel-card">
+                    <a href="#" class="carousel-card">
                         <div class="carousel-img">Sustainability & Energy</div>
                         <div class="carousel-info">
                             <h3>Sustainability & Energy</h3>
@@ -742,7 +748,7 @@
             <h2 class="section-title">Curriculum Vitae</h2>
             <div class="section-content">
                 <p>Download my comprehensive CV to learn more about my professional background, education, and project experience.</p>
-                <a href="Tesfaye_CV.pdf" class="btn btn-secondary" target="_blank" style="margin-top: 1rem;">Download CV (PDF)</a>
+                <a href="#" class="btn btn-secondary" style="margin-top: 1rem;">Download CV (PDF)</a>
             </div>
         </div>
     </section>
@@ -810,15 +816,16 @@
         const portfolioCarousel = document.getElementById('portfolio-carousel');
         const portfolioCards = portfolioCarousel.querySelectorAll('.carousel-card');
         const portfolioCardWidth = 315;
-        const portfolioMaxIndex = Math.max(0, portfolioCards.length - Math.floor(window.innerWidth / portfolioCardWidth));
-
+        
         function scrollPortfolioCarousel(direction) {
+            const maxIndex = Math.max(0, portfolioCards.length - Math.floor(portfolioCarousel.parentElement.offsetWidth / portfolioCardWidth));
+            
             portfolioCurrentIndex += direction;
             
             if (portfolioCurrentIndex < 0) {
                 portfolioCurrentIndex = 0;
-            } else if (portfolioCurrentIndex > portfolioMaxIndex) {
-                portfolioCurrentIndex = portfolioMaxIndex;
+            } else if (portfolioCurrentIndex > maxIndex) {
+                portfolioCurrentIndex = maxIndex;
             }
             
             const translateX = -portfolioCurrentIndex * portfolioCardWidth;
@@ -830,9 +837,10 @@
         const carousel = document.getElementById('carousel');
         const cards = carousel.querySelectorAll('.carousel-card');
         const cardWidth = 315;
-        const maxIndex = Math.max(0, cards.length - Math.floor(window.innerWidth / cardWidth));
 
         function scrollCarousel(direction) {
+            const maxIndex = Math.max(0, cards.length - Math.floor(carousel.parentElement.offsetWidth / cardWidth));
+            
             currentIndex += direction;
             
             if (currentIndex < 0) {
@@ -850,4 +858,59 @@
         const certificationsCarousel = document.getElementById('certifications-carousel');
         const certificationsCards = certificationsCarousel.querySelectorAll('.carousel-card');
         const certificationsCardWidth = 315;
-        const certificationsMaxIndex = Math.max(0, certificationsCards.length - Math.
+
+        function scrollCertificationsCarousel(direction) {
+            const maxIndex = Math.max(0, certificationsCards.length - Math.floor(certificationsCarousel.parentElement.offsetWidth / certificationsCardWidth));
+            
+            certificationsCurrentIndex += direction;
+            
+            if (certificationsCurrentIndex < 0) {
+                certificationsCurrentIndex = 0;
+            } else if (certificationsCurrentIndex > maxIndex) {
+                certificationsCurrentIndex = maxIndex;
+            }
+            
+            const translateX = -certificationsCurrentIndex * certificationsCardWidth;
+            certificationsCarousel.style.transform = `translateX(${translateX}px)`;
+        }
+
+        // Handle window resize to recalculate carousel positions
+        window.addEventListener('resize', function() {
+            // Reset all carousel positions on resize
+            portfolioCurrentIndex = 0;
+            currentIndex = 0;
+            certificationsCurrentIndex = 0;
+            
+            portfolioCarousel.style.transform = 'translateX(0px)';
+            carousel.style.transform = 'translateX(0px)';
+            certificationsCarousel.style.transform = 'translateX(0px)';
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                // Find which carousel is in view and scroll it
+                const projectsSection = document.getElementById('projects');
+                const certificationsSection = document.getElementById('certifications');
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition >= projectsSection.offsetTop - 100 && scrollPosition < certificationsSection.offsetTop - 100) {
+                    scrollCarousel(-1);
+                } else if (scrollPosition >= certificationsSection.offsetTop - 100) {
+                    scrollCertificationsCarousel(-1);
+                }
+            } else if (e.key === 'ArrowRight') {
+                const projectsSection = document.getElementById('projects');
+                const certificationsSection = document.getElementById('certifications');
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition >= projectsSection.offsetTop - 100 && scrollPosition < certificationsSection.offsetTop - 100) {
+                    scrollCarousel(1);
+                } else if (scrollPosition >= certificationsSection.offsetTop - 100) {
+                    scrollCertificationsCarousel(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
