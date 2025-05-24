@@ -360,7 +360,7 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 8px;
-            color: #FFD700;
+            color: var(--netflix-white);
             line-height: 1.2;
         }
 
@@ -383,6 +383,15 @@
         .carousel-card:hover .carousel-info p {
             color: #e5e5e5;
             transition: color 0.3s ease;
+        }
+
+        /* Middle carousel special styling */
+        .middle-carousel .carousel-info h3 {
+            color: var(--netflix-red);
+        }
+
+        .middle-carousel .carousel-card:hover .carousel-info h3 {
+            color: #ffd700;
         }
 
         .arrow {
@@ -716,7 +725,7 @@
 
             <!-- Enhanced Netflix-Style Carousel Section -->
             <h3 class="section-title" style="font-size: 2rem; margin-top: 3rem;">Additional Projects</h3>
-            <div class="carousel-wrapper">
+            <div class="carousel-wrapper middle-carousel">
                 <button class="arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
                 <div class="carousel-container" id="carousel">
                     <div class="carousel-card">
@@ -829,32 +838,20 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        // Carousel functionality
+        let portfolioCurrentIndex = 0;
+        let middleCurrentIndex = 0;
+        let certificationsCurrentIndex = 0;
 
-        // Navigation background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+        function scrollPortfolioCarousel(direction) {
+            const carousel = document.getElementById('portfolio-carousel');
+            const cards = carousel.querySelectorAll('.carousel-card');
+            const cardWidth = cards[0].offsetWidth + 20; // width + gap
+            const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+            const maxIndex = Math.max(0, cards.length - visibleCards);
 
-        // Add hover effects to project cards
-        document.querySelectorAll('.home-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform =
+            portfolioCurrentIndex += direction;
+            if (portfolioCurrentIndex < 0) portfolioCurrentIndex = 0;
+            if (portfolioCurrentIndex > maxIndex) portfolioCurrentIndex = maxIndex;
+
+            carousel.style.transform
