@@ -840,161 +840,30 @@
     
 
 <script>
-// Carousel functionality with error handling and swipe support
-let carouselPositions = {
-    'portfolio-carousel': 0,
-    'carousel': 0,
-    'certifications-carousel': 0
-};
-
-function scrollPortfolioCarousel(direction) {
-    scrollCarouselGeneric('portfolio-carousel', direction);
-}
-
-function scrollCarousel(direction) {
-    scrollCarouselGeneric('carousel', direction);
-}
-
-function scrollCertificationsCarousel(direction) {
-    scrollCarouselGeneric('certifications-carousel', direction);
-}
-
-function scrollCarouselGeneric(carouselId, direction) {
-    const carousel = document.getElementById(carouselId);
-    if (!carousel) return;
-
-    const cards = carousel.querySelectorAll('.carousel-card');
-    if (cards.length === 0) return;
-
-    const wrapper = carousel.parentElement;
-    const wrapperWidth = wrapper.offsetWidth;
-    const cardWidth = cards[0].offsetWidth + 20;
-
-    const visibleCards = Math.floor(wrapperWidth / cardWidth);
-    const maxIndex = Math.max(0, cards.length - visibleCards);
-
-    carouselPositions[carouselId] += direction;
-    if (carouselPositions[carouselId] < 0) carouselPositions[carouselId] = 0;
-    if (carouselPositions[carouselId] > maxIndex) carouselPositions[carouselId] = maxIndex;
-
-    const translateX = -carouselPositions[carouselId] * cardWidth;
-    carousel.style.transform = `translateX(${translateX}px)`;
-
-    updateArrowStates(carouselId, carouselPositions[carouselId], maxIndex);
-}
-
-function updateArrowStates(carouselId, currentPos, maxPos) {
-    const carousel = document.getElementById(carouselId);
-    const wrapper = carousel.parentElement;
-    const leftArrow = wrapper.querySelector('.arrow-left');
-    const rightArrow = wrapper.querySelector('.arrow-right');
-
-    if (leftArrow) {
-        leftArrow.style.opacity = currentPos === 0 ? '0.3' : '1';
-        leftArrow.style.cursor = currentPos === 0 ? 'not-allowed' : 'pointer';
-    }
-
-    if (rightArrow) {
-        rightArrow.style.opacity = currentPos >= maxPos ? '0.3' : '1';
-        rightArrow.style.cursor = currentPos >= maxPos ? 'not-allowed' : 'pointer';
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-    Object.keys(carouselPositions).forEach(carouselId => {
-        const carousel = document.getElementById(carouselId);
-        if (carousel) {
-            carousel.style.transform = 'translateX(0px)';
-            carouselPositions[carouselId] = 0;
-
-            const cards = carousel.querySelectorAll('.carousel-card');
-            if (cards.length > 0) {
-                const wrapper = carousel.parentElement;
-                const wrapperWidth = wrapper.offsetWidth;
-                const cardWidth = cards[0].offsetWidth + 20;
-                const visibleCards = Math.floor(wrapperWidth / cardWidth);
-                const maxIndex = Math.max(0, cards.length - visibleCards);
-                updateArrowStates(carouselId, 0, maxIndex);
-            }
-        }
-    });
-
-    addTouchSupport();
-});
-
-window.addEventListener('resize', function () {
-    Object.keys(carouselPositions).forEach(carouselId => {
-        carouselPositions[carouselId] = 0;
-        const carousel = document.getElementById(carouselId);
-        if (carousel) {
-            carousel.style.transform = 'translateX(0px)';
-            const cards = carousel.querySelectorAll('.carousel-card');
-            if (cards.length > 0) {
-                const wrapper = carousel.parentElement;
-                const wrapperWidth = wrapper.offsetWidth;
-                const cardWidth = cards[0].offsetWidth + 20;
-                const visibleCards = Math.floor(wrapperWidth / cardWidth);
-                const maxIndex = Math.max(0, cards.length - visibleCards);
-                updateArrowStates(carouselId, 0, maxIndex);
-            }
-        }
-    });
-});
-
-window.addEventListener('scroll', function () {
-    const nav = document.getElementById('main-nav');
-    if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-function addTouchSupport() {
     const carousels = ['portfolio-carousel', 'carousel', 'certifications-carousel'];
-    carousels.forEach(carouselId => {
+    const positions = {};
+
+    function updateCarousel(carouselId, direction) {
         const carousel = document.getElementById(carouselId);
         if (!carousel) return;
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const wrapper = carousel.parentElement;
+        const cardWidth = cards[0].offsetWidth + 20;
+        const visibleCards = Math.floor(wrapper.offsetWidth / cardWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
 
-        let startX = 0, startY = 0, isDragging = false;
+        positions[carouselId] = (positions[carouselId] || 0) + direction;
+        if (positions[carouselId] < 0) positions[carouselId] = 0;
+        if (positions[carouselId] > maxIndex) positions[carouselId] = maxIndex;
 
-        carousel.addEventListener('touchstart', function (e) {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-            isDragging = true;
-        });
+        carousel.style.transform = `translateX(${-positions[carouselId] * cardWidth}px)`;
+    }
 
-        carousel.addEventListener('touchmove', function (e) {
-            if (!isDragging) return;
-            e.preventDefault();
-        });
-
-        carousel.addEventListener('touchend', function (e) {
-            if (!isDragging) return;
-            const endX = e.changedTouches[0].clientX;
-            const endY = e.changedTouches[0].clientY;
-            const deltaX = startX - endX;
-            const deltaY = Math.abs(startY - endY);
-            if (Math.abs(deltaX) > 50 && deltaY < 100) {
-                scrollCarouselGeneric(carouselId, deltaX > 0 ? 1 : -1);
-            }
-            isDragging = false;
-        });
-    });
-}
+    window.scrollPortfolioCarousel = (dir) => updateCarousel('portfolio-carousel', dir);
+    window.scrollCarousel = (dir) => updateCarousel('carousel', dir);
+    window.scrollCertificationsCarousel = (dir) => updateCarousel('certifications-carousel', dir);
+});
 </script>
 </body>
 </html>
