@@ -855,3 +855,55 @@
             if (portfolioCurrentIndex > maxIndex) portfolioCurrentIndex = maxIndex;
 
             carousel.style.transform
+<script>
+    // === Project Portfolio Carousel ===
+    let portfolioCurrentIndex = 0;
+    function scrollPortfolioCarousel(direction) {
+        const carousel = document.getElementById('portfolio-carousel');
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const cardWidth = cards[0].offsetWidth + 20;
+        const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        portfolioCurrentIndex += direction;
+        if (portfolioCurrentIndex < 0) portfolioCurrentIndex = 0;
+        if (portfolioCurrentIndex > maxIndex) portfolioCurrentIndex = maxIndex;
+
+        const translateX = -portfolioCurrentIndex * cardWidth;
+        carousel.style.transform = `translateX(${translateX}px)`;
+    }
+
+    // === Additional Projects Carousel ===
+    let middleCurrentIndex = 0;
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById('carousel');
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const cardWidth = cards[0].offsetWidth + 20;
+        const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        middleCurrentIndex += direction;
+        if (middleCurrentIndex < 0) middleCurrentIndex = 0;
+        if (middleCurrentIndex > maxIndex) middleCurrentIndex = maxIndex;
+
+        const translateX = -middleCurrentIndex * cardWidth;
+        carousel.style.transform = `translateX(${translateX}px)`;
+    }
+
+    // === Certifications Carousel ===
+    let certificationsCurrentIndex = 0;
+    function scrollCertificationsCarousel(direction) {
+        const carousel = document.getElementById('certifications-carousel');
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const cardWidth = cards[0].offsetWidth + 20;
+        const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        certificationsCurrentIndex += direction;
+        if (certificationsCurrentIndex < 0) certificationsCurrentIndex = 0;
+        if (certificationsCurrentIndex > maxIndex) certificationsCurrentIndex = maxIndex;
+
+        const translateX = -certificationsCurrentIndex * cardWidth;
+        carousel.style.transform = `translateX(${translateX}px)`;
+    }
+</script>
