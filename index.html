@@ -837,4 +837,41 @@
         </div>
     </footer>
 
-    
+    <script>
+        // Carousel functionality
+        let carouselPositions = {
+            'portfolio-carousel': 0,
+            'carousel': 0,
+            'certifications-carousel': 0
+        };
+
+        function scrollPortfolioCarousel(direction) {
+            scrollCarouselGeneric('portfolio-carousel', direction);
+        }
+
+        function scrollCarousel(direction) {
+            scrollCarouselGeneric('carousel', direction);
+        }
+
+        function scrollCertificationsCarousel(direction) {
+            scrollCarouselGeneric('certifications-carousel', direction);
+        }
+
+        function scrollCarouselGeneric(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const cards = carousel.querySelectorAll('.carousel-card');
+            const cardWidth = cards[0].offsetWidth + 20; //
+            const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+            const maxIndex = Math.max(0, cards.length - visibleCards);
+            // Update scroll index
+            carouselPositions[carouselId] += direction;
+            if (carouselPositions[carouselId] < 0) carouselPositions[carouselId] = 0;
+            if (carouselPositions[carouselId] > maxIndex) carouselPositions[carouselId] = maxIndex;
+
+            // Apply transform
+            const translateX = -carouselPositions[carouselId] * cardWidth;
+            carousel.style.transform = `translateX(${translateX}px)`;
+        }
+    </script>
+</body>
+</html>
