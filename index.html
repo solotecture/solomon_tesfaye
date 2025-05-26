@@ -536,27 +536,21 @@
             
             .carousel-wrapper {
                 padding: 0 20px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .carousel-wrapper::-webkit-scrollbar {
-                display: none;
+                overflow: hidden;
+                touch-action: pan-y;
             }
             
             .carousel-container {
-                transform: none !important;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
+                overflow: visible;
                 padding-bottom: 20px;
                 pointer-events: all;
+                touch-action: pan-y;
             }
             
             .carousel-card {
                 flex: 0 0 280px;
-                scroll-snap-align: start;
                 height: 250px;
+                touch-action: manipulation;
             }
             
             .arrow {
@@ -837,12 +831,13 @@
         </div>
     </footer>
 
-    
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const carousels = ['portfolio-carousel', 'carousel', 'certifications-carousel'];
     const positions = {};
+    const touchStartX = {};
+    const touchStartY = {};
+    const isMobile = window.innerWidth <= 768;
 
     function updateCarousel(carouselId, direction) {
         const carousel = document.getElementById(carouselId);
@@ -855,15 +850,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
         positions[carouselId] = (positions[carouselId] || 0) + direction;
         if (positions[carouselId] < 0) positions[carouselId] = 0;
-        if (positions[carouselId] > maxIndex) positions[carouselId] = maxIndex;
-
-        carousel.style.transform = `translateX(${-positions[carouselId] * cardWidth}px)`;
-    }
-
-    window.scrollPortfolioCarousel = (dir) => updateCarousel('portfolio-carousel', dir);
-    window.scrollCarousel = (dir) => updateCarousel('carousel', dir);
-    window.scrollCertificationsCarousel = (dir) => updateCarousel('certifications-carousel', dir);
-});
-</script>
-</body>
-</html>
+        if (positions[carou
