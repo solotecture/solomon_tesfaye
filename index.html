@@ -844,19 +844,15 @@
         </p>
        </div>
       </a>
-      <div class="carousel-card">
-       <div class="carousel-img">
-        Clash Detection Studies
-       </div>
-       <div class="carousel-info">
-        <h3>
-         Clash Detection Studies
-        </h3>
-        <p>
-         Advanced coordination analysis and resolution strategies
-        </p>
-       </div>
-      </div>
+      
+<div class="carousel-card" onclick="openGifOverlay('Clause_flow_high_quality.gif')">
+  <div class="carousel-img">Clash Detection Studies</div>
+  <div class="carousel-info">
+    <h3>Clash Detection Studies</h3>
+    <p>Advanced coordination analysis and resolution strategies</p>
+  </div>
+</div>
+
       <div class="carousel-card">
        <div class="carousel-img">
         Digital Twin Development
@@ -1160,7 +1156,24 @@
         }
     });
 });
-   </script>
+   
+function openGifOverlay(gifSrc) {
+    document.getElementById('gif-content').src = gifSrc;
+    document.getElementById('gif-overlay').style.display = 'flex';
+}
+
+function closeGifOverlay() {
+    document.getElementById('gif-overlay').style.display = 'none';
+    document.getElementById('gif-content').src = ''; // Stop playback
+}
+
+</script>
   </section>
- </body>
+ 
+<div id="gif-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center;">
+  <img id="gif-content" src="" style="max-width:90%; max-height:90%;" />
+  <span onclick="closeGifOverlay()" style="position:absolute; top:20px; right:30px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+</div>
+
+</body>
 </html>
