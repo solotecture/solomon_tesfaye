@@ -872,19 +872,26 @@
 </div>
 
 
-      <div class="carousel-card">
-       <div class="carousel-img">
-        IMM Design Lab
-       </div>
-       <div class="carousel-info">
-        <h3>
-         Digital Urban Information
-        </h3>
-        <p>
-         Data and information management for digital urban modelling through QGIS
-        </p>
-       </div>
-      </div>
+      
+<div class="carousel-card" onclick="toggleVideoList()">
+  <div class="carousel-img">IMM Design Lab</div>
+  <div class="carousel-info">
+    <h3>Digital Urban Information</h3>
+    <p>Click to view comparative urban analysis videos</p>
+    <div id="video-list" style="display:none; margin-top: 1rem;">
+      <a href="bologna_urban_analysis_final_cover_updated.mp4" target="_blank" style="color:#FDFF96; display:block; margin-bottom: 0.3rem;">▶ Bologna Urban Analysis</a>
+      <a href="piacenza_urban_analysis_final_cover_updated.mp4" target="_blank" style="color:#FDFF96; display:block; margin-bottom: 0.3rem;">▶ Piacenza Urban Analysis</a>
+      <a href="ispra_urban_analysis_final_cover_updated.mp4" target="_blank" style="color:#FDFF96; display:block;">▶ Ispra Urban Analysis</a>
+    </div>
+  </div>
+</div>
+<script>
+function toggleVideoList() {
+  var list = document.getElementById("video-list");
+  list.style.display = list.style.display === "none" ? "block" : "none";
+}
+</script>
+
       <div class="carousel-card">
        <div class="carousel-img">
         Architectural Portfolio
