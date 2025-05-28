@@ -1182,13 +1182,13 @@ function closeGifOverlay() {
 </div>
 
 
-<!-- IMM Design Lab Section -->
-<div class="project-card" onclick="openGallery(0)">
-  <img src="ispra_urban_analysis_final_corrected.gif" alt="IMM Design Lab GIF Preview">
+<!-- IMM Design Lab Card -->
+<div class="project-card">
+  <img src="ispra_urban_analysis_final_corrected.gif" alt="IMM Design Lab" id="immPreview">
   <h3>IMM Design Lab</h3>
 </div>
 
-<!-- IMM Design Lab Modal Viewer -->
+<!-- Modal Viewer -->
 <div id="gifModal" class="modal">
   <span class="close" onclick="closeGallery()">&times;</span>
   <img class="modal-content" id="gifDisplay">
@@ -1238,6 +1238,10 @@ const gifs = [
   "Bologna_urban_analysis (2).gif"
 ];
 let current = 0;
+
+window.onload = function() {
+  document.getElementById("immPreview").addEventListener("click", () => openGallery(0));
+};
 
 function openGallery(index) {
   current = index;
