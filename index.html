@@ -872,59 +872,19 @@
 </div>
 
 
-      
-<div class="carousel-card" onclick="openVideoOverlay(0)">
-  <div class="carousel-img">IMM Design Lab</div>
-  <div class="carousel-info">
-    <h3>Digital Urban Information</h3>
-    <p>Comparative urban analysis: Bologna, Piacenza, and Ispra</p>
-  </div>
-</div>
-
-<div id="video-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background-color:#000; z-index:10000; justify-content:center; align-items:center; flex-direction:column;">
-  <video id="city-video" controls autoplay style="width:90vw; height:auto; max-height:80vh; background-color:#000;">
-    <source id="video-source" src="" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div style="margin-top:20px;">
-    <button onclick="navigateVideo(-1)" style="padding:10px 20px; font-size:16px; cursor:pointer;">⟵ Previous</button>
-    <button onclick="navigateVideo(1)" style="padding:10px 20px; font-size:16px; margin-left:10px; cursor:pointer;">Next ⟶</button>
-  </div>
-  <span onclick="closeVideoOverlay()" style="position:absolute; top:10px; right:20px; font-size:36px; color:white; cursor:pointer;">&times;</span>
-</div>
-
-<script>
-var videoList = [
-  "bologna_urban_analysis_final_cover_updated.mp4",
-  "piacenza_urban_analysis_final_cover_updated.mp4",
-  "ispra_urban_analysis_final_cover_updated.mp4"
-];
-var currentVideoIndex = 0;
-
-function openVideoOverlay(index) {
-  currentVideoIndex = index;
-  const source = document.getElementById('video-source');
-  const video = document.getElementById('city-video');
-  source.src = videoList[currentVideoIndex];
-  video.load();
-  document.getElementById('video-overlay').style.display = 'flex';
-}
-
-function closeVideoOverlay() {
-  const video = document.getElementById('city-video');
-  video.pause();
-  document.getElementById('video-overlay').style.display = 'none';
-}
-
-function navigateVideo(direction) {
-  currentVideoIndex = (currentVideoIndex + direction + videoList.length) % videoList.length;
-  const source = document.getElementById('video-source');
-  const video = document.getElementById('city-video');
-  source.src = videoList[currentVideoIndex];
-  video.load();
-}
-</script>
-
+      <div class="carousel-card">
+       <div class="carousel-img">
+        IMM Design Lab
+       </div>
+       <div class="carousel-info">
+        <h3>
+         Digital Urban Information
+        </h3>
+        <p>
+         Data and information management for digital urban modelling through QGIS
+        </p>
+       </div>
+      </div>
       <div class="carousel-card">
        <div class="carousel-img">
         Architectural Portfolio
