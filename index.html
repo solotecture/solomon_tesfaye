@@ -873,22 +873,50 @@
 
 
       
-<div class="carousel-card" onclick="toggleVideoList()">
+<div class="carousel-card" onclick="openVideoOverlay(0)">
   <div class="carousel-img">IMM Design Lab</div>
   <div class="carousel-info">
     <h3>Digital Urban Information</h3>
-    <p>Click to view comparative urban analysis videos</p>
-    <div id="video-list" style="display:none; margin-top: 1rem;">
-      <a href="bologna_urban_analysis_final_cover_updated.mp4" target="_blank" style="color:#FDFF96; display:block; margin-bottom: 0.3rem;">▶ Bologna Urban Analysis</a>
-      <a href="piacenza_urban_analysis_final_cover_updated.mp4" target="_blank" style="color:#FDFF96; display:block; margin-bottom: 0.3rem;">▶ Piacenza Urban Analysis</a>
-      <a href="ispra_urban_analysis_final_cover_updated.mp4" target="_blank" style="color:#FDFF96; display:block;">▶ Ispra Urban Analysis</a>
-    </div>
+    <p>Comparative urban analysis: Bologna, Piacenza, and Ispra</p>
   </div>
 </div>
+
+<div id="video-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; justify-content:center; align-items:center; flex-direction:column;">
+  <video id="city-video" controls autoplay style="max-width:90%; max-height:80%;">
+    <source id="video-source" src="bologna_urban_analysis_final_cover_updated.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div style="margin-top:20px;">
+    <button onclick="navigateVideo(-1)" style="margin-right: 1rem;">⟵ Previous</button>
+    <button onclick="navigateVideo(1)">Next ⟶</button>
+  </div>
+  <span onclick="closeVideoOverlay()" style="position:absolute; top:20px; right:30px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+</div>
+
 <script>
-function toggleVideoList() {
-  var list = document.getElementById("video-list");
-  list.style.display = list.style.display === "none" ? "block" : "none";
+var videoList = [
+  "bologna_urban_analysis_final_cover_updated.mp4",
+  "piacenza_urban_analysis_final_cover_updated.mp4",
+  "ispra_urban_analysis_final_cover_updated.mp4"
+];
+var currentVideoIndex = 0;
+
+function openVideoOverlay(index) {
+  currentVideoIndex = index;
+  document.getElementById('video-source').src = videoList[currentVideoIndex];
+  document.getElementById('city-video').load();
+  document.getElementById('video-overlay').style.display = 'flex';
+}
+
+function closeVideoOverlay() {
+  document.getElementById('video-overlay').style.display = 'none';
+  document.getElementById('city-video').pause();
+}
+
+function navigateVideo(direction) {
+  currentVideoIndex = (currentVideoIndex + direction + videoList.length) % videoList.length;
+  document.getElementById('video-source').src = videoList[currentVideoIndex];
+  document.getElementById('city-video').load();
 }
 </script>
 
