@@ -872,19 +872,21 @@
 </div>
 
 
-      <div class="carousel-card">
-       <div class="carousel-img">
-        IMM Design Lab
-       </div>
-       <div class="carousel-info">
-        <h3>
-         Digital Urban Information
-        </h3>
-        <p>
-         Data and information management for digital urban modelling through QGIS
-        </p>
-       </div>
-      </div>
+      
+<div class="carousel-card" onclick="openGifOverlay('Bologna_urban_analysis.gif')">
+  <div class="carousel-img">
+    IMM Design Lab
+  </div>
+  <div class="carousel-info">
+    <h3>
+      Digital Urban Information
+    </h3>
+    <p>
+      Data and information management for digital urban modelling through QGIS
+    </p>
+  </div>
+</div>
+
       <div class="carousel-card">
        <div class="carousel-img">
         Architectural Portfolio
@@ -1181,82 +1183,5 @@ function closeGifOverlay() {
   <span onclick="closeGifOverlay()" style="position:absolute; top:20px; right:30px; font-size:30px; color:white; cursor:pointer;">&times;</span>
 </div>
 
-
-<!-- IMM Design Lab Card -->
-<div class="project-card">
-  <img src="ispra_urban_analysis_final_corrected.gif" alt="IMM Design Lab" id="immPreview">
-  <h3>IMM Design Lab</h3>
-</div>
-
-<!-- Modal Viewer -->
-<div id="gifModal" class="modal">
-  <span class="close" onclick="closeGallery()">&times;</span>
-  <img class="modal-content" id="gifDisplay">
-  <div class="caption" id="captionText"></div>
-  <button class="next-btn" onclick="nextGif()">Next</button>
-</div>
-
-<style>
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 60px;
-  background-color: rgba(0,0,0,0.9);
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-.modal-content {
-  max-width: 90%;
-  height: auto;
-}
-.next-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background: #fff;
-  border: none;
-  border-radius: 5px;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-</style>
-
-<script>
-const gifs = [
-  "ispra_urban_analysis_final_corrected.gif",
-  "piacenza_urban_analysis_fixed.gif",
-  "Bologna_urban_analysis (2).gif"
-];
-let current = 0;
-
-window.onload = function() {
-  document.getElementById("immPreview").addEventListener("click", () => openGallery(0));
-};
-
-function openGallery(index) {
-  current = index;
-  document.getElementById("gifModal").style.display = "block";
-  document.getElementById("gifDisplay").src = gifs[current];
-}
-
-function closeGallery() {
-  document.getElementById("gifModal").style.display = "none";
-}
-
-function nextGif() {
-  current = (current + 1) % gifs.length;
-  document.getElementById("gifDisplay").src = gifs[current];
-}
-</script>
 </body>
 </html>
