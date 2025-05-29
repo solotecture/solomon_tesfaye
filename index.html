@@ -887,7 +887,6 @@
         </p>
 </div>
 </div>
-
 <a class="carousel-card" href="msc-thesis-polimi-ed.pdf" target="_blank">
 <div class="carousel-img">
     Masters Thesis
@@ -1193,8 +1192,13 @@ function closeGifOverlay() {
 <div id="gif-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; flex-direction:column;">
 <img id="gif-content" src="" style="max-width:90%; max-height:80%;"/>
 <div style="margin-top: 20px;">
-<button onclick="showNextGif()" style="padding: 10px 20px; font-size: 1rem; margin-right: 10px;">Next</button>
-<button onclick="closeGifOverlay()" style="padding: 10px 20px; font-size: 1rem;">Close</button>
+
+
+</div>
+
+<div style="margin-top: 20px; display: flex; gap: 20px;">
+<span onclick="showNextGif()" style="cursor:pointer; font-size: 2rem; color: white;">⏭️</span>
+<span onclick="closeGifOverlay()" style="cursor:pointer; font-size: 2rem; color: white;">❌</span>
 </div>
 </div>
 </body>
