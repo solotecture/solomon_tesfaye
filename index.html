@@ -86,7 +86,7 @@
         .hero-section {
             min-height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(20,20,20,0.9) 100%), 
-            url('view03-ed.jpg') center/cover no-repeat;
+            url('futuristic_city_with_watermark.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -626,24 +626,8 @@
     justify-content: center;
   }
 }
-
-/* Mobile horizontal scrolling and snapping */
-@media (max-width: 768px) {
-  .carousel-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .carousel-card {
-    scroll-snap-align: start;
-    flex: 0 0 auto;
-    min-width: 80%;
-  }
-}
 </style>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
+</head>
 <body>
 <nav id="main-nav">
 <div class="container">
@@ -900,7 +884,7 @@
     </p>
 </div>
 </div>
-<div class="carousel-card" onclick="openGifOverlayArray(['Bologna_urban_analysis (2).gif', 'ispra_urban_analysis_no_frame1.gif', 'piacenza_urban_analysis_fixed.gif', 'Quelimane_urban_analysis.gif'])">
+<div class="carousel-card" onclick="openGifOverlayArray(['Bologna_urban_analysis (2).gif', 'ispra_urban_analysis_no_frame1.gif', 'piacenza_urban_analysis_fixed.gif'])">
 <div class="carousel-img">
     IMM Design Lab
   </div>
@@ -918,17 +902,17 @@
          Selected Works
         </h3>
 <p>
-         Academic architectural designs and international competition submissions.
+         Digital documentation and preservation of historic structures
         </p>
 </div>
 </div>
 <a class="carousel-card" href="msc-thesis-polimi-ed.pdf" target="_blank">
 <div class="carousel-img">
-    Masters Thesis-polimi
+    Masters Thesis
   </div>
 <div class="carousel-info">
-<h3>SMART without Slum</h3>
-<p>Integrated design themes; Softness, Multilayer, Agritecture, Robustness, &amp; Technology.</p>
+<h3>Urban Digital Twin and BIM</h3>
+<p>Master's Thesis on data-driven architectural workflows and digital twin integration.</p>
 </div>
 </a>
 </div>
@@ -984,7 +968,7 @@
          Sustainability Certifications
         </h3>
 <p>
-         Green buildings, retrofit design expertise, and low-carbon construction strategies.
+         IES-VE simulation, retrofit design expertise, and low-carbon construction strategies.
         </p>
 </div>
 </a>
@@ -1034,7 +1018,7 @@
        </a>
 </p>
 <p style="margin-top: 1.5rem;">
-       I'm always interested in discussing new opportunities in BIM implementation, digital construction workflows, and sustainable design projects. Feel free to reach out to explore how we can collaborate.
+       I'm always interested in discussing new opportunities in BIM coordination, digital construction workflows, and sustainable design projects. Feel free to reach out to explore how we can collaborate.
       </p>
 </div>
 </div>
@@ -1045,46 +1029,190 @@
       © 2025 Solomon Tesfaye - BIM &amp; Architecture Professional
      </p>
 <p style="margin-top: 0.5rem; color: var(--netflix-light-gray);">
-      Specializing in BIM, ISO 19650, IFC, COBie, and sustainable design solutions.
+      Specializing in ISO 19650, IFC coordination, and sustainable design solutions
      </p>
 </div>
 </footer>
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const carousels = ['portfolio-carousel', 'carousel', 'certifications-carousel'];
+    const positions = {};
+    const touchStartX = {};
+    const touchStartY = {};
+    const isMobile = window.innerWidth <= 768;
+
+    // Initialize carousel positions
+    carousels.forEach(id => {
+        positions[id] = 0;
+    });
+
+    function updateCarousel(carouselId, direction) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+        
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const wrapper = carousel.parentElement;
+        const cardWidth = cards[0].offsetWidth + 20; // card width + gap
+        const visibleCards = Math.floor(wrapper.offsetWidth / cardWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        positions[carouselId] = Math.max(0, Math.min(maxIndex, positions[carouselId] + direction));
+        
+        const translateX = -positions[carouselId] * cardWidth;
+        carousel.style.transform = `translateX(${translateX}px)`;
+    }
+
+    // Carousel navigation functions
+    window.scrollPortfolioCarousel = function(direction) {
+        updateCarousel('portfolio-carousel', direction);
+    };
+
+    window.scrollCarousel = function(direction) {
+        updateCarousel('carousel', direction);
+    };
+
+    window.scrollCertificationsCarousel = function(direction) {
+        updateCarousel('certifications-carousel', direction);
+    };
+
+    // Navigation scroll effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Touch/swipe support for mobile
+    if (isMobile) {
+        carousels.forEach(carouselId => {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+
+            carousel.addEventListener('touchstart', function(e) {
+                touchStartX[carouselId] = e.touches[0].clientX;
+                touchStartY[carouselId] = e.touches[0].clientY;
+            }, { passive: true });
+
+            carousel.addEventListener('touchmove', function(e) {
+                if (!touchStartX[carouselId] || !touchStartY[carouselId]) return;
+
+                const touchEndX = e.touches[0].clientX;
+                const touchEndY = e.touches[0].clientY;
+                const diffX = touchStartX[carouselId] - touchEndX;
+                const diffY = touchStartY[carouselId] - touchEndY;
+
+                // Only handle horizontal swipes (ignore vertical scrolling)
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    e.preventDefault();
+                    const direction = diffX > 0 ? 1 : -1;
+                    updateCarousel(carouselId, direction);
+                    
+                    // Reset touch start positions
+                    touchStartX[carouselId] = null;
+                    touchStartY[carouselId] = null;
+                }
+            }, { passive: false });
+
+            carousel.addEventListener('touchend', function() {
+                touchStartX[carouselId] = null;
+                touchStartY[carouselId] = null;
+            });
+        });
+    }
+
+    // Auto-resize handling
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            // Reset all carousel positions on resize
+            carousels.forEach(id => {
+                positions[id] = 0;
+                const carousel = document.getElementById(id);
+                if (carousel) {
+                    carousel.style.transform = 'translateX(0px)';
+                }
+            });
+        }, 250);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const focusedElement = document.activeElement;
+            const carouselWrapper = focusedElement.closest('.carousel-wrapper');
+            
+            if (carouselWrapper) {
+                const carousel = carouselWrapper.querySelector('.carousel-container');
+                if (carousel) {
+                    const direction = e.key === 'ArrowLeft' ? -1 : 1;
+                    updateCarousel(carousel.id, direction);
+                    e.preventDefault();
+                }
+            }
+        }
+    });
+
+    // Initialize carousels
+    carousels.forEach(id => {
+        const carousel = document.getElementById(id);
+        if (carousel) {
+            carousel.style.transform = 'translateX(0px)';
+        }
+    });
+});
+   
+function openGifOverlay(gifSrc) {
+    document.getElementById('gif-content').src = gifSrc;
+    document.getElementById('gif-overlay').style.display = 'flex';
+}
+
 let gifArray = [];
 let gifIndex = 0;
 
 function openGifOverlayArray(gifs) {
-  gifArray = gifs;
-  gifIndex = 0;
-  document.getElementById('gif-content').src = gifArray[gifIndex];
-  document.getElementById('gif-overlay').style.display = 'flex';
+    gifArray = gifs;
+    gifIndex = 0;
+    document.getElementById('gif-content').src = gifArray[gifIndex];
+    document.getElementById('gif-overlay').style.display = 'flex';
 }
 
 function showNextGif() {
-  if (gifArray.length === 0) return;
-  gifIndex = (gifIndex + 1) % gifArray.length;
-  document.getElementById('gif-content').src = gifArray[gifIndex];
+    if (gifArray.length === 0) return;
+    gifIndex = (gifIndex + 1) % gifArray.length;
+    document.getElementById('gif-content').src = gifArray[gifIndex];
 }
 
 function closeGifOverlay() {
-  document.getElementById('gif-overlay').style.display = 'none';
-  document.getElementById('gif-content').src = '';
-  gifArray = [];
-  gifIndex = 0;
+    document.getElementById('gif-overlay').style.display = 'none';
+    document.getElementById('gif-content').src = ''; // Stop playback
 }
+
 </script>
 </section>
 <div id="gif-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; flex-direction:column;">
 <img id="gif-content" src="" style="max-width:90%; max-height:80%;"/>
 <div style="margin-top: 20px;">
-</div>
-<div style="margin-top: 20px; display: flex; gap: 16px;">
-<div class="arrow arrow-right" onclick="showNextGif()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
-    ❯
-  </div>
-<div class="arrow arrow-right" onclick="closeGifOverlay()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
-    ✕
-  </div>
+<button onclick="showNextGif()" style="padding: 10px 20px; font-size: 1rem; margin-right: 10px;">Next</button>
+<button onclick="closeGifOverlay()" style="padding: 10px 20px; font-size: 1rem;">Close</button>
 </div>
 </div>
 </body>
