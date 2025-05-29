@@ -86,7 +86,7 @@
         .hero-section {
             min-height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(20,20,20,0.9) 100%), 
-            url('futuristic_city_with_watermark.jpg') center/cover no-repeat;
+            url('view03-ed.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -607,27 +607,8 @@
 .carousel-card:hover .carousel-img {
   color: white !important;
 }
-  
-@media (max-width: 768px) {
-  #gif-overlay .arrow {
-    display: flex !important;
-    position: static !important;
-    transform: none !important;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    margin: 0 10px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #gif-overlay div[style*="display: flex; gap: 16px;"] {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-</style>
-</head>
+  </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <body>
 <nav id="main-nav">
 <div class="container">
@@ -884,7 +865,7 @@
     </p>
 </div>
 </div>
-<div class="carousel-card" onclick="openGifOverlayArray(['Bologna_urban_analysis (2).gif', 'ispra_urban_analysis_no_frame1.gif', 'piacenza_urban_analysis_fixed.gif'])">
+<div class="carousel-card" onclick="openGifOverlayArray(['Bologna_urban_analysis (2).gif', 'ispra_urban_analysis_no_frame1.gif', 'piacenza_urban_analysis_fixed.gif', 'Quelimane_urban_analysis.gif'])">
 <div class="carousel-img">
     IMM Design Lab
   </div>
@@ -902,17 +883,17 @@
          Selected Works
         </h3>
 <p>
-         Digital documentation and preservation of historic structures
+         Academic architectural designs and international competition submissions.
         </p>
 </div>
 </div>
 <a class="carousel-card" href="msc-thesis-polimi-ed.pdf" target="_blank">
 <div class="carousel-img">
-    Masters Thesis
+    Masters Thesis-polimi
   </div>
 <div class="carousel-info">
-<h3>Urban Digital Twin and BIM</h3>
-<p>Master's Thesis on data-driven architectural workflows and digital twin integration.</p>
+<h3>SMART without Slum</h3>
+<p>Integrated design themes; Softness, Multilayer, Agritecture, Robustness, &amp; Technology.</p>
 </div>
 </a>
 </div>
@@ -968,7 +949,7 @@
          Sustainability Certifications
         </h3>
 <p>
-         IES-VE simulation, retrofit design expertise, and low-carbon construction strategies.
+         Green buildings, retrofit design expertise, and low-carbon construction strategies.
         </p>
 </div>
 </a>
@@ -1018,7 +999,7 @@
        </a>
 </p>
 <p style="margin-top: 1.5rem;">
-       I'm always interested in discussing new opportunities in BIM coordination, digital construction workflows, and sustainable design projects. Feel free to reach out to explore how we can collaborate.
+       I'm always interested in discussing new opportunities in BIM implementation, digital construction workflows, and sustainable design projects. Feel free to reach out to explore how we can collaborate.
       </p>
 </div>
 </div>
@@ -1029,7 +1010,7 @@
       © 2025 Solomon Tesfaye - BIM &amp; Architecture Professional
      </p>
 <p style="margin-top: 0.5rem; color: var(--netflix-light-gray);">
-      Specializing in ISO 19650, IFC coordination, and sustainable design solutions
+      Specializing in BIM, ISO 19650, IFC, COBie, and sustainable design solutions.
      </p>
 </div>
 </footer>
@@ -1211,8 +1192,14 @@ function closeGifOverlay() {
 <div id="gif-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; flex-direction:column;">
 <img id="gif-content" src="" style="max-width:90%; max-height:80%;"/>
 <div style="margin-top: 20px;">
-<button onclick="showNextGif()" style="padding: 10px 20px; font-size: 1rem; margin-right: 10px;">Next</button>
-<button onclick="closeGifOverlay()" style="padding: 10px 20px; font-size: 1rem;">Close</button>
+</div>
+<div style="margin-top: 20px; display: flex; gap: 16px;">
+<div class="arrow arrow-right" onclick="showNextGif()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
+    ❯
+  </div>
+<div class="arrow arrow-right" onclick="closeGifOverlay()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
+    ✕
+  </div>
 </div>
 </div>
 </body>
