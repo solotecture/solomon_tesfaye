@@ -607,7 +607,26 @@
 .carousel-card:hover .carousel-img {
   color: white !important;
 }
-  </style>
+  
+@media (max-width: 768px) {
+  #gif-overlay .arrow {
+    display: flex !important;
+    position: static !important;
+    transform: none !important;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #gif-overlay div[style*="display: flex; gap: 16px;"] {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+</style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <body>
 <nav id="main-nav">
