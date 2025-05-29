@@ -1183,6 +1183,13 @@ function openGifOverlayArray(gifs) {
     gifIndex = 0;
     document.getElementById('gif-content').src = gifArray[gifIndex];
     document.getElementById('gif-overlay').style.display = 'flex';
+
+    const nextBtn = document.getElementById('gif-next-btn');
+    if (gifArray.length > 1) {
+        nextBtn.style.display = 'flex';
+    } else {
+        nextBtn.style.display = 'none';
+    }
 }
 
 function showNextGif() {
@@ -1203,7 +1210,7 @@ function closeGifOverlay() {
 <div style="margin-top: 20px;">
 </div>
 <div style="margin-top: 20px; display: flex; gap: 16px;">
-<div class="arrow arrow-right" onclick="showNextGif()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
+<div id="gif-next-btn" class="arrow arrow-right" onclick="showNextGif()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
     ❯
   </div>
 <div class="arrow arrow-right" onclick="closeGifOverlay()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
