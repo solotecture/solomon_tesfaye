@@ -608,7 +608,7 @@
   color: white !important;
 }
   </style>
-</head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <body>
 <nav id="main-nav">
 <div class="container">
@@ -1197,8 +1197,12 @@ function closeGifOverlay() {
 </div>
 
 <div style="margin-top: 20px; display: flex; gap: 20px;">
-<span onclick="showNextGif()" style="cursor:pointer; font-size: 2rem; color: white;">⏭️</span>
-<span onclick="closeGifOverlay()" style="cursor:pointer; font-size: 2rem; color: white;">❌</span>
+<span onclick="showNextGif()" style="cursor:pointer; font-size: 2rem; color: white;">
+<i class="fas fa-forward"></i>
+</span>
+<span onclick="closeGifOverlay()" style="cursor:pointer; font-size: 2rem; color: white;">
+<i class="fas fa-times"></i>
+</span>
 </div>
 </div>
 </body>
