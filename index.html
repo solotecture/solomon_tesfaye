@@ -1196,13 +1196,13 @@ function closeGifOverlay() {
 
 </div>
 
-<div style="margin-top: 20px; display: flex; gap: 20px;">
-<span onclick="showNextGif()" style="cursor:pointer; font-size: 2rem; color: white;">
-<i class="fas fa-forward"></i>
-</span>
-<span onclick="closeGifOverlay()" style="cursor:pointer; font-size: 2rem; color: white;">
-<i class="fas fa-times"></i>
-</span>
+<div style="margin-top: 20px; display: flex; gap: 16px;">
+<div class="arrow arrow-right" onclick="showNextGif()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
+    ❯
+  </div>
+<div class="arrow arrow-right" onclick="closeGifOverlay()" style="position: relative; transform: none; background: rgba(253, 255, 150, 0.9); width: 40px; height: 40px;">
+    ✕
+  </div>
 </div>
 </div>
 </body>
