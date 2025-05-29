@@ -607,7 +607,13 @@
 .carousel-card:hover .carousel-img {
   color: white !important;
 }
-  </style>
+  
+nav ul li a.active {
+  color: var(--netflix-red);
+  font-weight: bold;
+}
+
+</style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
   @media (max-width: 768px) {
@@ -1218,5 +1224,35 @@ function closeGifOverlay() {
   </div>
 </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    function activateMenu() {
+      let scrollPos = window.scrollY + 100;
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', activateMenu);
+    activateMenu(); // Initial call on load
+  });
+</script>
+
 </body>
 </html>
