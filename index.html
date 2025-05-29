@@ -15,6 +15,12 @@
 
 
 
+
+.carousel-card:hover .carousel-info h3 {
+  color: #FDFF96;
+  transition: color 0.3s ease;
+}
+
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;display=swap" rel="stylesheet"/>
@@ -429,31 +435,31 @@
         .middle-carousel 
 
         .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(253, 255, 150, 0.9);
-            color: #141414;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            font-size: 0.9rem;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 20;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-        }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(253, 255, 150, 0.9);
+    color: #141414;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
 
-        .arrow:hover {
-            background: rgba(253, 255, 150, 1);
-            transform: translateY(-50%) scale(1.15);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-        }
+.arrow:hover {
+    background: rgba(253, 255, 150, 1);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
 
         .arrow-left {
             left: 5px;
