@@ -13,15 +13,7 @@
 
 
 
-.carousel-card:hover .carousel-info h3 {
-  font-family: 'Codystar', sans-serif;
-  letter-spacing: 1.5px;
-  font-weight: normal;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: auto;
-  text-rendering: geometricPrecision;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
-}
+
 
 </style>
 
@@ -344,20 +336,13 @@
         }
 
         .carousel-img {
-            width: 100%;
-            height: 60%;
-            background: linear-gradient(135deg, #333333, #1a1a1a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #b3b3b3;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+  font-family: 'Codystar', monospace !important;
+  font-size: 1rem !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--netflix-red) !important;
+  text-shadow: 0 0 4px rgba(253, 255, 150, 0.4);
+}
 
         .carousel-img::before {
             content: '';
@@ -370,10 +355,13 @@
         }
 
         .carousel-card:hover .carousel-img {
-            background: linear-gradient(135deg, #FDFF96, #ffed4e);
-            color: #1a1a1a;
-            text-shadow: none;
-        }
+  font-family: 'Codystar', monospace !important;
+  font-size: 1rem !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--netflix-red) !important;
+  text-shadow: 0 0 4px rgba(253, 255, 150, 0.4);
+}
 
         .carousel-info {
             padding: 15px;
@@ -402,15 +390,7 @@
             -webkit-box-orient: vertical;
         }
 
-        .carousel-card:hover .carousel-info h3 {
-  font-family: 'Codystar', sans-serif;
-  letter-spacing: 1.5px;
-  font-weight: normal;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: auto;
-  text-rendering: geometricPrecision;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
-}
+        
 
         .carousel-card:hover .carousel-info p {
             color: #e5e5e5;
@@ -422,15 +402,7 @@
             color: var(--netflix-white);
         }
 
-        .middle-carousel .carousel-card:hover .carousel-info h3 {
-  font-family: 'Codystar', sans-serif;
-  letter-spacing: 1.5px;
-  font-weight: normal;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: auto;
-  text-rendering: geometricPrecision;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
-}
+        .middle-carousel 
 
         .arrow {
             position: absolute;
@@ -629,7 +601,7 @@
         }
     
 .carousel-img {
-  font-family: 'DotGothic16', monospace !important;
+  font-family: 'Codystar', monospace !important;
   font-size: 1rem !important;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -639,7 +611,12 @@
 
 
 .carousel-card:hover .carousel-img {
-  color: white !important;
+  font-family: 'Codystar', monospace !important;
+  font-size: 1rem !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--netflix-red) !important;
+  text-shadow: 0 0 4px rgba(253, 255, 150, 0.4);
 }
   
 nav ul li a.active {
