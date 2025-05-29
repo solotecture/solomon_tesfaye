@@ -623,6 +623,34 @@ nav ul li a.active {
   }
 </style>
 
+
+<style>
+  @media (max-width: 768px) {
+    .arrow {
+      display: flex !important;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 36px;
+      height: 36px;
+      font-size: 1.2rem;
+      background: rgba(253, 255, 150, 0.95);
+      color: #141414;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    .arrow-left {
+      left: 8px;
+    }
+    .arrow-right {
+      right: 8px;
+    }
+  }
+</style>
+
 </head>
 <body>
 <nav id="main-nav">
