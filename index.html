@@ -626,6 +626,22 @@
     justify-content: center;
   }
 }
+
+/* Mobile horizontal scrolling and snapping */
+@media (max-width: 768px) {
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-card {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    min-width: 80%;
+  }
+}
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <body>
