@@ -623,6 +623,51 @@ nav ul li a.active {
   font-weight: bold;
 }
 
+.bim-dimensions-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dimension-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.dimension-item img {
+  height: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.dimension-item p {
+  margin-top: 0.5rem;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dimension-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(253, 255, 150, 0.5);
+}
+
+.dimension-item:hover p {
+  color: #FDFF96;
+}
+
+@media (max-width: 600px) {
+  .dimension-item img {
+    height: 80px;
+  }
+  .dimension-item p {
+    font-size: 0.85rem;
+  }
+}
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
@@ -656,6 +701,51 @@ nav ul li a.active {
       right: 6px;
     }
   }
+.bim-dimensions-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dimension-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.dimension-item img {
+  height: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.dimension-item p {
+  margin-top: 0.5rem;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dimension-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(253, 255, 150, 0.5);
+}
+
+.dimension-item:hover p {
+  color: #FDFF96;
+}
+
+@media (max-width: 600px) {
+  .dimension-item img {
+    height: 80px;
+  }
+  .dimension-item p {
+    font-size: 0.85rem;
+  }
+}
 </style>
 
 </head>
@@ -801,7 +891,32 @@ nav ul li a.active {
        Comprehensive IFC clash detection and 3D–8D validation project demonstrating advanced coordination capabilities and quality assurance processes.
       </p>
 <div>
-<img alt="BIM Dimensions Tags" src="bim-diminsions.jpg" style="max-width: 100%; height: auto; margin-top: 1rem;"/>
+<div class="bim-dimensions-icons">
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_3D.jpg" alt="3D Shape" />
+    <p>3D Shape</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_4D.jpg" alt="4D Scheduling" />
+    <p>4D Scheduling</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_5D.jpg" alt="5D Estimating" />
+    <p>5D Estimating</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_6D.jpg" alt="6D Facility Management" />
+    <p>6D Facility Mgmt</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_7D.jpg" alt="7D Sustainability" />
+    <p>7D Sustainability</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_8D.jpg" alt="8D Health & Safety" />
+    <p>8D H&S</p>
+  </a>
+</div>
 </div>
 <a class="btn btn-secondary" href="surf-life-bim-audit-ed.pdf" style="margin-top: 1rem;" target="_blank">
        View Full Report
