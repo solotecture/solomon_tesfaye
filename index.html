@@ -11,13 +11,10 @@
 <style>
 .bim-dimensions-icons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 0.5rem 0;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .dimension-item {
@@ -25,31 +22,39 @@
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease;
-  width: 70px;
-  flex: 0 0 auto;
+  width: 90px;
 }
 
 .dimension-item img {
-  height: 50px;
+  height: 55px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 6px;
 }
 
 .dimension-item p {
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
   color: white;
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   transition: color 0.3s ease;
 }
 
 .dimension-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(253, 255, 150, 0.5);
 }
 
 .dimension-item:hover p {
   color: #FDFF96;
+}
+
+@media (max-width: 600px) {
+  .dimension-item img {
+    height: 50px;
+  }
+  .dimension-item p {
+    font-size: 0.75rem;
+  }
 }
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
