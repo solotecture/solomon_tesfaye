@@ -627,6 +627,52 @@ nav ul li a.active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dimension-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  width: 100px;
+}
+
+.dimension-item img {
+  height: 70px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.dimension-item p {
+  margin-top: 0.3rem;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.dimension-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(253, 255, 150, 0.5);
+}
+
+.dimension-item:hover p {
+  color: #FDFF96;
+}
+
+@media (max-width: 600px) {
+  .dimension-item img {
+    height: 60px;
+  }
+  .dimension-item p {
+    font-size: 0.8rem;
+  }
+}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -702,6 +748,52 @@ nav ul li a.active {
     }
   }
 .bim-dimensions-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dimension-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  width: 100px;
+}
+
+.dimension-item img {
+  height: 70px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.dimension-item p {
+  margin-top: 0.3rem;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.dimension-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(253, 255, 150, 0.5);
+}
+
+.dimension-item:hover p {
+  color: #FDFF96;
+}
+
+@media (max-width: 600px) {
+  .dimension-item img {
+    height: 60px;
+  }
+  .dimension-item p {
+    font-size: 0.8rem;
+  }
+}
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -892,6 +984,31 @@ nav ul li a.active {
       </p>
 <div>
 <div class="bim-dimensions-icons">
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_3D.jpg" alt="Model" />
+    <p>Model</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_4D.jpg" alt="Scheduling" />
+    <p>Scheduling</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_5D.jpg" alt="Cost" />
+    <p>Cost</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_6D.jpg" alt="Facility Mgmt" />
+    <p>Facility Mgmt</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_7D.jpg" alt="Sustainability" />
+    <p>Sustainability</p>
+  </a>
+  <a href="#" class="dimension-item">
+    <img src="bim_dimension_8D.jpg" alt="Health & Safety" />
+    <p>Health & Safety</p>
+  </a>
+</div>
   <a href="#" class="dimension-item">
     <img src="bim_dimension_3D.jpg" alt="3D Shape" />
     <p>3D Shape</p>
