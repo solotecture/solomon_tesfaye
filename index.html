@@ -1085,37 +1085,38 @@ padding-right: 0.5rem;
 <a class="btn btn-secondary" href="surf-life-bim-audit-ed.pdf" style="margin-top: 1rem;" target="_blank">
        View Full Report
       </a>
-
 <style>
-  .tooltip {
-    position: relative;
-    display: inline-block;
-  }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
 
-  .tooltip .tooltip-text {
-    visibility: hidden;
-    background-color: rgba(253, 255, 150, 0.95);
-    color: #141414;
-    text-align: center;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    white-space: nowrap;
-    position: absolute;
-    z-index: 100;
-    top: 105%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: rgba(253, 255, 150, 0.95);
+  color: #141414;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 9999;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+}
 
-  .tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-  }
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
 </style>
 <div class="bim-dimensions-icons">
 <a class="dimension-item tooltip" href="#">
@@ -1143,7 +1144,6 @@ padding-right: 0.5rem;
 <span class="tooltip-text">8D – Health &amp; Safety Planning</span>
 </a>
 </div>
-
 </div>
 </div>
 <h2 class="section-title">
