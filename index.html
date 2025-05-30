@@ -1085,26 +1085,65 @@ padding-right: 0.5rem;
 <a class="btn btn-secondary" href="surf-life-bim-audit-ed.pdf" style="margin-top: 1rem;" target="_blank">
        View Full Report
       </a>
+
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: rgba(253, 255, 150, 0.95);
+    color: #141414;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 100;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
 <div class="bim-dimensions-icons">
-<a class="dimension-item" href="#">
+<a class="dimension-item tooltip" href="#">
 <img alt="Model" src="bim_dimension_3D.jpg"/>
+<span class="tooltip-text">3D – Model Geometry</span>
 </a>
-<a class="dimension-item" href="#">
+<a class="dimension-item tooltip" href="#">
 <img alt="Scheduling" src="bim_dimension_4D.jpg"/>
+<span class="tooltip-text">4D – Time &amp; Scheduling</span>
 </a>
-<a class="dimension-item" href="#">
+<a class="dimension-item tooltip" href="#">
 <img alt="Cost" src="bim_dimension_5D.jpg"/>
+<span class="tooltip-text">5D – Cost Estimation</span>
 </a>
-<a class="dimension-item" href="#">
+<a class="dimension-item tooltip" href="#">
 <img alt="Facility Mgmt" src="bim_dimension_6D.jpg"/>
+<span class="tooltip-text">6D – Facility Management</span>
 </a>
-<a class="dimension-item" href="#">
+<a class="dimension-item tooltip" href="#">
 <img alt="Sustainability" src="bim_dimension_7D.jpg"/>
+<span class="tooltip-text">7D – Sustainability Analysis</span>
 </a>
-<a class="dimension-item" href="#">
+<a class="dimension-item tooltip" href="#">
 <img alt="Health &amp; Safety" src="bim_dimension_8D.jpg"/>
+<span class="tooltip-text">8D – Health &amp; Safety Planning</span>
 </a>
 </div>
+
 </div>
 </div>
 <h2 class="section-title">
