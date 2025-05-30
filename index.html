@@ -688,48 +688,6 @@ padding-right: 0.5rem;
     font-size: 0.8rem;
   }
 }
-
-.featured-project {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 2rem;
-    background-color: var(--netflix-dark-gray);
-    border-radius: 12px;
-    overflow: hidden;
-    padding: 2rem;
-    flex-wrap: wrap;
-}
-
-.featured-project-image {
-    flex: 1.2;
-    max-width: 60%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.featured-project-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.featured-project-content {
-    flex: 0.8;
-    min-width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.featured-project-content .btn {
-    width: calc(6 * 100px + 5 * 0.1rem + 2rem);
-    max-width: 100%;
-    text-align: center;
-}
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -757,6 +715,48 @@ padding-right: 0.5rem;
       right: 6px;
     }
   }
+
+@media (max-width: 768px) {
+  .featured-project {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .featured-project-image {
+    max-width: 100%;
+  }
+
+  .featured-project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .featured-project-content {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .featured-project-content .btn {
+    width: 100%;
+  }
+
+  .bim-dimensions-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .dimension-item {
+    width: 30%;
+    max-width: 90px;
+  }
+
+  .dimension-item img {
+    height: 50px;
+  }
+}
 </style>
 </head>
 <body>
