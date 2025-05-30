@@ -627,6 +627,13 @@ nav ul li a.active {
 .bim-dimensions-icons {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
@@ -635,6 +642,7 @@ nav ul li a.active {
 
 .dimension-item {
   text-align: center;
+  scroll-snap-align: start;
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease;
