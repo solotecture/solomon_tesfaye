@@ -987,6 +987,7 @@ nav ul li a.active {
   background: none;
   border: none;
   gap: 5px;
+  margin-left: auto;
 }
 
 .hamburger {
@@ -1002,12 +1003,6 @@ nav ul li a.active {
 }
 
 @media (max-width: 768px) {
-  nav .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   .nav-toggle {
     display: flex;
   }
@@ -1029,10 +1024,6 @@ nav ul li a.active {
     gap: 1rem;
     text-align: center;
   }
-
-  .nav-logo {
-    margin-right: auto;
-  }
 }
 </style>
 
@@ -1041,13 +1032,15 @@ nav ul li a.active {
 <nav id="main-nav">
 <div class="container">
 <a class="nav-logo" href="Tesfaye_CV.pdf">
+     Solomon Tesfaye
+    </a>
+
 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
   <span class="hamburger"></span>
   <span class="hamburger"></span>
   <span class="hamburger"></span>
 </button>
-     Solomon Tesfaye
-    </a>
+
 <div class="nav-menu" id="nav-menu">
 <ul>
 <li>
