@@ -1836,14 +1836,18 @@ function closeGifOverlay() {
 
 
 @media (max-width: 768px) {
-  #contact .section-title {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  #contact .container {
+  #contact .container,
+  #cv .container {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #contact .section-title,
+  #cv .section-title {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
   }
 }
 </style>
