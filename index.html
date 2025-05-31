@@ -1025,6 +1025,36 @@ nav ul li a.active {
   }
 }
 </style>
+
+<style>
+@media (max-width: 768px) {
+  .bim-dimensions-icons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dimension-item {
+    flex: 0 0 auto;
+    width: 50px;
+  }
+
+  .dimension-item img {
+    height: 40px !important;
+    width: auto !important;
+  }
+
+  .dimension-item p {
+    font-size: 0.6rem !important;
+    white-space: nowrap;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav id="main-nav">
