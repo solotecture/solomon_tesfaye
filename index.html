@@ -978,6 +978,55 @@ nav ul li a.active {
 }
 
 </style>
+
+<style>
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: var(--netflix-red);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    display: block;
+    background-color: rgba(20, 20, 20, 0.95);
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav id="main-nav">
@@ -985,6 +1034,14 @@ nav ul li a.active {
 <a class="nav-logo" href="Tesfaye_CV.pdf">
      Solomon Tesfaye
     </a>
+
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+  <span class="hamburger"></span>
+  <span class="hamburger"></span>
+  <span class="hamburger"></span>
+</button>
+
+<div class="nav-menu" id="nav-menu">
 <ul>
 <li>
 <a href="#home">
@@ -1017,6 +1074,7 @@ nav ul li a.active {
       </a>
 </li>
 </ul>
+</div>
 </div>
 </nav>
 <!-- Hero Section -->
@@ -1663,6 +1721,18 @@ function closeGifOverlay() {
     activateMenu(); // Initial call on load
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navToggle = document.getElementById("nav-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    navToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
+    });
+  });
+</script>
+
 </body>
 </html>
 <style>
