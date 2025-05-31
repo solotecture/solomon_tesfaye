@@ -996,7 +996,6 @@ nav ul li a.active {
 }
 
 </style>
-
 <style>
 .nav-toggle {
   display: none;
@@ -1044,7 +1043,6 @@ nav ul li a.active {
   }
 }
 </style>
-
 </head>
 <body>
 <nav id="main-nav">
@@ -1052,13 +1050,11 @@ nav ul li a.active {
 <a class="nav-logo" href="Tesfaye_CV.pdf">
      Solomon Tesfaye
     </a>
-
-<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-  <span class="hamburger"></span>
-  <span class="hamburger"></span>
-  <span class="hamburger"></span>
+<button aria-label="Toggle menu" class="nav-toggle" id="nav-toggle">
+<span class="hamburger"></span>
+<span class="hamburger"></span>
+<span class="hamburger"></span>
 </button>
-
 <div class="nav-menu" id="nav-menu">
 <ul>
 <li>
@@ -1739,7 +1735,6 @@ function closeGifOverlay() {
     activateMenu(); // Initial call on load
   });
 </script>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.getElementById("nav-toggle");
@@ -1750,7 +1745,6 @@ function closeGifOverlay() {
     });
   });
 </script>
-
 </body>
 </html>
 <style>
@@ -1784,4 +1778,10 @@ function closeGifOverlay() {
   }
 }
 
+
+@media (max-width: 768px) {
+  .nav-menu.active ~ .nav-logo {
+    display: none !important;
+  }
+}
 </style>
