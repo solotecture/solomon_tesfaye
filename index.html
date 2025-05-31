@@ -807,24 +807,6 @@ nav ul li a.active {
     padding: 4px 8px;
   }
 }
-
-@media (max-width: 768px) {
-  nav .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-logo {
-    text-align: left;
-    margin-right: auto;
-  }
-
-  .nav-toggle {
-    margin-left: auto;
-  }
-}
-
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -996,6 +978,7 @@ nav ul li a.active {
 }
 
 </style>
+
 <style>
 .nav-toggle {
   display: none;
@@ -1043,38 +1026,20 @@ nav ul li a.active {
   }
 }
 </style>
-<style>
-@media (max-width: 768px) {
-  .nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
 
-  .nav-menu.active + .nav-logo {
-    display: none;
-  }
-
-  .nav-logo {
-    display: block;
-  }
-
-  .nav-menu.active ~ .nav-logo {
-    display: none;
-  }
-}
-</style></head>
+</head>
 <body>
 <nav id="main-nav">
-<div class="container"><div class="nav-header"><a class="nav-logo" href="Tesfaye_CV.pdf">
+<div class="container">
+<a class="nav-logo" href="Tesfaye_CV.pdf">
      Solomon Tesfaye
-    </a><button aria-label="Toggle menu" class="nav-toggle" id="nav-toggle">
-<span class="hamburger"></span>
-<span class="hamburger"></span>
-<span class="hamburger"></span>
-</button></div>
+    </a>
 
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+  <span class="hamburger"></span>
+  <span class="hamburger"></span>
+  <span class="hamburger"></span>
+</button>
 
 <div class="nav-menu" id="nav-menu">
 <ul>
@@ -1756,6 +1721,7 @@ function closeGifOverlay() {
     activateMenu(); // Initial call on load
   });
 </script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.getElementById("nav-toggle");
@@ -1766,6 +1732,7 @@ function closeGifOverlay() {
     });
   });
 </script>
+
 </body>
 </html>
 <style>
@@ -1799,10 +1766,4 @@ function closeGifOverlay() {
   }
 }
 
-
-@media (max-width: 768px) {
-  .nav-menu.active ~ .nav-logo {
-    display: none !important;
-  }
-}
 </style>
