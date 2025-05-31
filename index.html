@@ -1029,27 +1029,28 @@ nav ul li a.active {
 <style>
 @media (max-width: 768px) {
   .bim-dimensions-icons {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 0.2rem;
-    padding: 0.5rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 0.2rem !important;
+    padding: 0.3rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .dimension-item {
-    flex: 0 0 auto;
-    width: 50px;
+    flex: 0 0 auto !important;
+    width: 45px !important;
+    text-align: center;
   }
 
   .dimension-item img {
-    height: 40px !important;
+    height: 35px !important;
     width: auto !important;
   }
 
   .dimension-item p {
-    font-size: 0.6rem !important;
+    font-size: 0.55rem !important;
     white-space: nowrap;
   }
 }
