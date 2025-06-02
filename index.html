@@ -1129,24 +1129,26 @@ nav ul li a.active {
 <style>
 @media (max-width: 768px) {
   .featured-project-content p {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
     margin-bottom: 1rem !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
   }
 
-  .featured-project-content .btn {
-    font-size: 0.85rem !important;
-    padding: 0.6rem 1rem !important;
-    margin-bottom: 1rem !important;
+  .featured-project-content a.btn {
+    display: block !important;
     width: 100% !important;
-    box-sizing: border-box !important;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
   }
 
-  .featured-project-content {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
+  .bim-dimensions-icons {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 }
 </style>
