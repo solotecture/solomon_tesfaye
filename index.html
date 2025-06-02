@@ -1091,6 +1091,27 @@ nav ul li a.active {
   }
 }
 </style>
+
+<style>
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    order: 1;
+    margin-right: auto;
+  }
+
+  .nav-toggle {
+    order: 2;
+    margin-left: auto;
+  }
+}
+</style>
 </head>
 <body>
 <nav id="main-nav">
