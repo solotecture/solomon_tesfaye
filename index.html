@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+<head><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -807,6 +807,44 @@ nav ul li a.active {
     padding: 4px 8px;
   }
 }
+
+
+.social-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+  font-size: 1.5rem;
+}
+.social-icons-row a i {
+  color: var(--netflix-red);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons-row a:hover i {
+  transform: scale(1.2);
+  color: white;
+}
+
+
+
+@media (max-width: 768px) {
+  #contact .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #contact .section-title {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #contact .carousel-card {
+    margin-left: 0 !important;
+  }
+}
+
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -1476,19 +1514,6 @@ nav ul li a.active {
 <p>Information management and urban analysis using QGIS.</p>
 </div>
 </div>
-<div class="carousel-card">
-<div class="carousel-img">
-        Architectural Portfolio
-       </div>
-<div class="carousel-info">
-<h3>
-         Selected Works
-        </h3>
-<p>
-         Academic architectural designs and international competition submissions.
-        </p>
-</div>
-</div>
 <a class="carousel-card" href="final PF NEW_2025_med_res.pdf" target="_blank">
 <div class="carousel-img">Architectural Portfolio</div>
 <div class="carousel-info">
@@ -1569,38 +1594,39 @@ nav ul li a.active {
 </div>
 </section>
 <!-- CV Section -->
-
-<!-- CV Section -->
 <section id="cv">
-  <div class="container">
-    <h2 class="section-title">Curriculum Vitae</h2>
-    <div class="carousel-card" style="flex: 0 0 calc(33.333% - 14px); min-width: 300px; height: 280px; margin: 0 auto;">
-      <div class="carousel-img">CURRICULUM VITAE</div>
-      <div class="carousel-info">
-        <p>Download my comprehensive CV to learn more about my professional background, education, and project experience.</p>
-        <a class="btn btn-secondary" href="Tesfaye_CV.pdf" target="_blank" style="margin-top: 1rem;">Download CV (PDF)</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+<div class="container">
+<h2 class="section-title">
+     Curriculum Vitae
+    </h2>
+<div class="section-content">
+<p>
+      Download my comprehensive CV to learn more about my professional background, education, and project experience.
+     </p>
+<a class="btn btn-secondary" href="Tesfaye_CV.pdf" style="margin-top: 1rem;" target="_blank">
+      Download CV (PDF)
+     </a>
+</div>
+</div>
 <!-- Contact Section -->
 <section id="contact">
-  <div class="container">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="carousel-card" style="flex: 0 0 calc(33.333% - 14px); min-width: 300px; height: 280px; margin: 0 auto;">
-      <div class="carousel-img">GET IN TOUCH</div>
-      <div class="carousel-info">
-        <p><strong>Email:</strong> <a href="mailto:solomontesfaye.eng@gmail.com">solomontesfaye.eng@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/solotecture" target="_blank">linkedin.com/in/solotecture</a></p>
-        <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 1.2rem;">
-          <a href="mailto:solomontesfaye.eng@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/solotecture" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/solotecture" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container" style="width: 100%; margin: 0; padding: 0 1rem;">
+<h2 class="section-title" style="margin: 0 0 1rem 0; padding: 0; font-size: 1.4rem; text-align: left;">Get In Touch</h2>
+<div class="carousel-card" style="margin: 0; width: 100%; box-sizing: border-box;">
+<div class="carousel-img">Get in Touch</div>
+<div class="carousel-info">
+<h3 style="font-size: 1rem;">Contact &amp; Collaboration</h3>
+<p style="font-size: 0.8rem;">
+          I'm always open to BIM, digital construction, and sustainable design collaborations.
+        </p>
+<div class="social-icons-row">
+<a href="mailto:solomontesfaye.eng@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+<a href="https://linkedin.com/in/solotecture" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/solotecture?igsh=MTdyeDYwaWRmcm9haQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</div>
 </section>
 <footer>
 <div class="container">
